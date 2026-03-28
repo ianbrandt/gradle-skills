@@ -46,8 +46,13 @@ Update each dependency individually so the maintainer can review and commit each
 2. Search the repository for usages of its catalog alias to identify affected modules
 3. Run validation (step 3)
 4. Report results to the maintainer
+5. **STOP. Do not touch another dependency.** Your turn is over. Wait for the maintainer to explicitly say to continue before doing anything else.
 
-> **Stop after each dependency.** Wait for explicit maintainer confirmation before proceeding. Do not continue autonomously even if the user previously gave general approval.
+> **Hard stop after each dependency — no exceptions.**
+> - Do not queue up the next update.
+> - Do not mention what you plan to do next.
+> - Do not continue even if the user previously said "go ahead" or gave general approval.
+> - Resume only when the maintainer sends a new message explicitly asking you to proceed.
 
 **Watch for:**
 - Compiler/toolchain API changes

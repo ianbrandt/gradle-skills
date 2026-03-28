@@ -43,6 +43,12 @@ The dependency update workflow runs `./gradlew` tasks. To avoid per-invocation a
 }
 ```
 
+## Updating
+
+```
+/plugin update gradle-skills@ianbrandt
+```
+
 ## Usage
 
 Invoke the skill by name:
