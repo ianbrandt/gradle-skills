@@ -46,6 +46,7 @@ The dependency update workflow runs `./gradlew` tasks. To avoid per-invocation a
 ## Updating
 
 ```
+/plugin marketplace update ianbrandt
 /plugin update gradle-skills@ianbrandt
 ```
 
