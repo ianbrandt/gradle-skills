@@ -1,0 +1,9 @@
+{
+  "name": "gradle-skills",
+  "version": "1.0.0",
+  "description": "Skills for working with Gradle projects, including dependency update workflows.",
+  "author": "Ian Brandt",
+  "repository": "https://github.com/IanBrandt/gradle-skills",
+  "license": "MIT",
+  "keywords": ["gradle", "dependencies", "version-catalog"]
+}
