@@ -1,0 +1,15 @@
+{
+  "name": "ianbrandt",
+  "owner": {
+    "name": "Ian Brandt"
+  },
+  "plugins": [
+    {
+      "name": "gradle-skills",
+      "source": "./",
+      "version": "1.0.0",
+      "description": "Skills for working with Gradle projects.",
+      "keywords": ["gradle", "dependencies", "version-catalog"]
+    }
+  ]
+}

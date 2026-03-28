@@ -23,7 +23,8 @@ Guides Claude through checking, upgrading, and validating Gradle dependencies on
 Install at user scope (available across all your projects):
 
 ```
-claude plugin install IanBrandt/gradle-skills
+/plugin marketplace add IanBrandt/gradle-skills
+/plugin install gradle-skills@ianbrandt
 ```
 
 ### Bash permissions (optional)
