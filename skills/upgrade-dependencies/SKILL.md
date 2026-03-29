@@ -1,10 +1,10 @@
 ---
-name: dependency-updates
+name: upgrade-dependencies
 description: Check for and upgrade Gradle dependencies one at a time using version catalogs, with build validation after each change.
 paths: "**/libs.versions.toml"
 ---
 
-# Dependency Updates
+# Upgrade Dependencies
 
 Check for, upgrade, and validate Gradle dependencies one at a time.
 
@@ -67,7 +67,7 @@ Update each dependency individually so the maintainer can review and commit each
 After each version change, run:
 
 ```
-./gradlew build --rerun-tasks
+./gradlew build
 ```
 
 If the project applies the dependency-analysis-gradle-plugin, also run:
@@ -77,6 +77,16 @@ If the project applies the dependency-analysis-gradle-plugin, also run:
 ```
 
 Both must pass before reporting results.
+
+**`--rerun-tasks` option:** Before the first `./gradlew build` in a session, check memory for a saved `--rerun-tasks` preference. If no preference is found, ask the maintainer:
+
+> Would you like to run `./gradlew build` with `--rerun-tasks`? This forces all tasks to re-execute regardless of up-to-date checks.
+> - **yes** — use `--rerun-tasks` this time
+> - **no** — skip it this time
+> - **always** — use it now and in future sessions (saves preference)
+> - **never** — skip it now and in future sessions (saves preference)
+
+If the maintainer answers "always" or "never", save that preference to memory for future invocations. This option applies only to `./gradlew build`, not to other Gradle tasks.
 
 ### 4. Reporting
 

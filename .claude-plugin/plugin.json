@@ -6,5 +6,5 @@
   },
   "repository": "https://github.com/IanBrandt/gradle-skills",
   "license": "MIT",
-  "keywords": ["gradle", "dependencies", "version-catalog"]
+  "keywords": ["gradle", "dependencies", "version-catalog", "wrapper"]
 }
