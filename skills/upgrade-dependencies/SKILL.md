@@ -31,7 +31,13 @@ If the output contains a "dependencies exceed the version found at the milestone
 
 Do not use `--refresh-dependencies` on the initial run — it forces re-download of all metadata.
 
-### 2. Update one dependency at a time
+### 2. Self-update the Gradle Versions Plugin first
+
+If the report lists an update for the Gradle Versions Plugin itself (plugin id `com.github.ben-manes.versions`), upgrade only that plugin before any other dependency. Validate (step 4), then re-run step 1 with the new version. A newer plugin may surface different or more accurate updates, so subsequent prioritization should be based on the refreshed report.
+
+Treat this as a normal single-dependency turn: update, validate, report, **stop** and wait for the maintainer before re-running the check.
+
+### 3. Update one dependency at a time
 
 Update each dependency individually so the maintainer can review and commit each change independently.
 
@@ -44,7 +50,7 @@ Update each dependency individually so the maintainer can review and commit each
 **For each dependency:**
 1. Update only its version in `libs.versions.toml`
 2. Search the repository for usages of its catalog alias to identify affected modules
-3. Run validation (step 3)
+3. Run validation (step 4)
 4. Report results to the maintainer
 5. **STOP. Do not touch another dependency.** Your turn is over. Wait for the maintainer to explicitly say to continue before doing anything else.
 
@@ -62,7 +68,7 @@ Update each dependency individually so the maintainer can review and commit each
 
 **Batching:** Only batch updates when dependencies *must* be updated together (e.g., a library and its required companion version). Prefer single-dependency changes. If batching, explain why.
 
-### 3. Validation
+### 4. Validation
 
 After each version change, run:
 
@@ -88,7 +94,7 @@ Both must pass before reporting results.
 
 If the maintainer answers "always" or "never", save that preference to memory for future invocations. This option applies only to `./gradlew build`, not to other Gradle tasks.
 
-### 4. Reporting
+### 5. Reporting
 
 - Summarize what changed and why
 - Report validation results
